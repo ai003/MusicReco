@@ -11,6 +11,7 @@ def preprocess(input_csv, output_csv):
 
     # preprocess the data
     df = df.dropna(subset=['artists', 'album_name', 'track_name'])
+    df = df.drop_duplicates(subset=['track_name', 'artists', 'album_name'])
 
     # save the cleaned data
     df.to_csv(output_csv, index=False)
