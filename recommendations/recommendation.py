@@ -18,8 +18,6 @@ def load_and_prepare(cleaned_csv):
 
     return df, features
 
-# for testing purposes gets random songs
-
 
 def get_random_songs(df, n_songs=25):
     # returns a datafram containing the sampled rows
@@ -42,26 +40,33 @@ def get_recommendations(selected_songs, df, features, n_recommendations=15):
     recommend_indices = np.argsort(mean_similarity)[::-1]
     recommend_indices = [
         i for i in recommend_indices if df.iloc[i]['track_name'] not in selected_songs]
+    # alternative to
+    '''
+    new indices = []
+    for i in recommend_indices:
+        if df.iloc[i]['track_name'] not in selected_songs:
+            new_indices.append(i)
+    '''
 
     # get the top 15 recommendations
-    top_recommendations = recommend_indices[:n_recommendations]
-    recommendations = df.iloc[top_recommendations]
+    top_indices = recommend_indices[:n_recommendations]
+    recommendations = df.iloc[top_indices]
 
     return recommendations
 
 
-if __name__ == "__main__":
-    df, features = load_and_prepare('../dataprocessing/cleaned.csv')
+# if __name__ == "__main__":
+#     df, features = load_and_prepare('../dataprocessing/cleaned.csv')
 
-    # get a randeom pool of 25 songs
-    random_songs = get_random_songs(df)
-    print("Randonly selected songs for user selection:")
-    print(random_songs)
+#     # get a randeom pool of 25 songs
+#     random_songs = get_random_songs(df)
+#     print("Randonly selected songs for user selection:")
+#     print(random_songs)
 
-    # select random 5 songs from pool
-    selected_songs = random_songs.sample(n=5)['track_name'].tolist()
-    print(f"selected songs: {selected_songs}")
+#     # select random 5 songs from pool
+#     selected_songs = random_songs.sample(n=5)['track_name'].tolist()
+#     print(f"selected songs: {selected_songs}")
 
-    recommendations = get_recommendations(selected_songs, df, features)
-    print("recommended songs")
-    print(recommendations[['track_name', 'artists', 'album_name']])
+#     recommendations = get_recommendations(selected_songs, df, features)
+#     print("recommended songs")
+#     print(recommendations[['track_name', 'artists', 'album_name']])
