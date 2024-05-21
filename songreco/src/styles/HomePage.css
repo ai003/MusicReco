@@ -1,0 +1,29 @@
+.home-page {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.home-page p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.home-page button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-page button:hover {
+    background-color: #0056b3;
+}

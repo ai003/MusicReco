@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './purpleSpotify.jpeg';
+import './styles/App.css';
 
 function App() {
+  //need to update
   return (
     <div className="App">
       <header className="App-header">
