@@ -21,7 +21,8 @@ def load_and_prepare(cleaned_csv):
 
 def get_random_songs(df, n_songs=25):
     # returns a datafram containing the sampled rows
-    return df.sample(n=n_songs)[['track_name', 'artists', 'album_name']]
+    # orient data in dictionary json format
+    return df.sample(n=n_songs)[['track_name', 'artists', 'album_name']].to_dict(orient='records')
 
 
 def get_recommendations(selected_songs, df, features, n_recommendations=15):
@@ -51,8 +52,8 @@ def get_recommendations(selected_songs, df, features, n_recommendations=15):
     # get the top 15 recommendations
     top_indices = recommend_indices[:n_recommendations]
     recommendations = df.iloc[top_indices]
-
-    return recommendations
+    # orient data in dictionary json format
+    return recommendations[['track_name', 'artist', 'album']].to_dict(orient='records')
 
 
 # if __name__ == "__main__":
