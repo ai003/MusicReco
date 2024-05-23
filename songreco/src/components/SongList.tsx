@@ -3,10 +3,10 @@ import { Song } from '../pages/RecommendPage';
 
 //object type that uses Song[] for reusability
 interface SongListProps {
-    songs: Song[]
-    selectedSongs?: Song[] //all optional types
+    songs: Song[];
+    selectedSongs?: Song[]; //all optional types
     onSongSelect?: (song: Song) => void;
-    isRecommendation?: boolean
+    isRecommendation?: boolean;
 }
 
 const SongList: React.FC<SongListProps> = ({ songs, selectedSongs = [], onSongSelect, isRecommendation = false }) => (

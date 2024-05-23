@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
       <h1>Welcome to Music Recommendation</h1>
       <p>Tired of not being able to find new music that fits your taste?</p>
       <p>Select your favorite songs from this list and get personalized recommendations!</p>
-      <button onClick={handleGetStarted}>Get Started</button> {/*send to recommend page */}
+      <button onClick={handleGetStarted}>Get Started</button>
     </div>
   );
 };

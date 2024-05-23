@@ -15,7 +15,7 @@ const App: React.FC = () => {//first page seen, instant routing
         </div>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/select-songs' element={<RecommendPage />} /> {/*add later*/}
+          <Route path='/select-songs' element={<RecommendPage />} />
         </Routes>
       </div>
     </Router>

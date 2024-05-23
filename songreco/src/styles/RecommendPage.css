@@ -9,6 +9,7 @@
   gap: 10px;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 55px;
 }
 
 .song-tile {
@@ -20,19 +21,20 @@
 }
 
 .song-tile.selected {
-  background-color: #f0f0f0;
+  background-color: #898585;
 }
 
 button {
   padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #8f13c9 !important;
   color: white;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
   margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 button:disabled {
@@ -41,11 +43,12 @@ button:disabled {
 }
 
 button:hover:not(:disabled) {
-  background-color: #0056b3;
+  background-color: #8e09cb8f;
 }
 
 .recommendation-list {
   margin-top: 20px;
+  margin-bottom: 55px;
 }
 
 .recommended-song {
