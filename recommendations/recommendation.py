@@ -27,12 +27,12 @@ def get_random_songs(df, n_songs=25):
 
 def get_recommendations(selected_songs, df, features, n_recommendations=15):
     # ensure selected songs are in dataset
-    selected_features = df[df['track_name'].isin(selected_songs)][features]
+    selected_features = df[df['track_name'].isin(selected_songs)][features] #gets songs with their features
     if not selected_songs:
         raise ValueError("None of the selected songs are in the dataset")
 
-    all_features = df[features]
-    similarity_matrix = cosine_similarity(selected_features, all_features)
+    all_features = df[features] #gets all features
+    similarity_matrix = cosine_similarity(selected_features, all_features) #compares them
 
     # get average similarity score for each song
     mean_similarity = np.mean(similarity_matrix, axis=0)
